@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Python-SNAP-Pt2.iml" filepath="$PROJECT_DIR$/.idea/Python-SNAP-Pt2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Py-SNAP.iml" filepath="$PROJECT_DIR$/.idea/Py-SNAP.iml" />
     </modules>
   </component>
 </project>

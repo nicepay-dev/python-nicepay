@@ -1,34 +1,67 @@
-class builderVirtualAccount:
-    def __init__(self):
-        self._partnerServiceId = None
-        self._customerNo = None
-        self._virtualAccountNo = None
-        self._virtualAccountName = None
-        self._trxId = None
-        self._totalAmount = None
-        self._additionalInfo = None
-
-    def virtualAccount(self, partnerServiceId, customerNo, virtualAccountNo, virtualAccountName,
-                       trxId, totalAmount, additionalInfo):
-        self._partnerServiceId = partnerServiceId
-        self._customerNo = customerNo
-        self._virtualAccountNo = virtualAccountNo
-        self._virtualAccountName = virtualAccountName
-        self._trxId = trxId
-        self._totalAmount = totalAmount
-        self._additionalInfo = additionalInfo
+class variableVirtualAccount:
+    def __init__(self,
+                 partnerServiceId,
+                 customerNo,
+                 virtualAccountNo,
+                 virtualAccountName,
+                 trxId,
+                 totalAmount,
+                 additionalInfo):
+        self.partnerServiceId = partnerServiceId
+        self.customerNo = customerNo
+        self.virtualAccountNo = virtualAccountNo
+        self.virtualAccountName = virtualAccountName
+        self.trxId = trxId
+        self.totalAmount = totalAmount
+        self.additionalInfo = additionalInfo
 
     def toString(self):
-        return "{" + \
-            "partnerServiceId =" + self._partnerServiceId \
-            + ", customerNo = " + self._customerNo \
-            + ", virtualAccountNo = " + self._virtualAccountNo \
-            + ", virtualAccountName = " + self._virtualAccountName \
-            + ", trxId = " + self._trxId \
-            + ", totalAmount = " + self._totalAmount \
-            + ", additionalInfo = " + self._additionalInfo \
-            + \
-            "}"
+        return ({
+            "partnerServiceId": self.partnerServiceId,
+            "customerNo": self.customerNo,
+            "virtualAccountNo": self.virtualAccountNo,
+            "virtualAccountName": self.virtualAccountName,
+            "trxId": self.trxId,
+            "totalAmount": self.totalAmount,
+            "additionalInfo": self.additionalInfo
+        })
 
-builderVirtualAccount.virtualAccount("0","0001","XXX","GEB","TRX","A","B","XX")
-print(builderVirtualAccount.toString())
+
+
+class virtualAccountBuilder:
+    def __init__(self):
+        self.partnerServiceId = None
+        self.customerNo = None
+        self.virtualAccountNo = None
+        self.virtualAccountName = None
+        self.trxId = None
+        self.totalAmount = None
+        self.additionalInfo = None
+
+    def setPartnerServiceId(self, partnerServiceId):
+        self.partnerServiceId = partnerServiceId
+        return self
+
+    def setCustomerNo(self, customerNo):
+        self.customerNo = customerNo
+        return self
+
+    def setVirtualAccountNo(self, virtualAccountNo):
+        self.virtualAccountNo = virtualAccountNo
+        return self
+
+    def setVirtualAccountName(self, virtualAccountName):
+        self.virtualAccountName = virtualAccountName
+        return self
+
+    def setTrxId(self, trxId):
+        self.trxId = trxId
+        return self
+
+    def setTotalAmount(self, totalAmount):
+        self.totalAmount = totalAmount
+        return self
+
+    def setAdditionalInfo(self, additionalInfo):
+        self.additionalInfo = additionalInfo
+        return self

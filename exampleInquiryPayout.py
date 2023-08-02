@@ -4,7 +4,7 @@ import datetime
 nicepaySNAP.setContentType = "Application/JSON"
 nicepaySNAP.setAccessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJJT05QQVlURVNUIiwiaXNzIjoiTklDRVBBWSIsIm5hbWUiOiJCTVJJIiwiZXhwIjoiMjAyMy0wNi0wNVQwMzowODoyN1oifQ==.iulkLG2468UC-WC-4ZYGiBAkfDb2WhbbpFOx6ACSuQw="
 nicepaySNAP.setXTimestamp = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")+"+07:00"
-nicepaySNAP.setClientSecret = "33F49GnCMS1mFYlGXisbUDzVf2ATWCl9k3R++d5hDd3Frmuos/XLx8XhXpe+LDYAbpGKZYSwtlyyLOtS/8aD7A=="
+nicepaySNAP.setClientSecret = "8NHVvi23AEO9bPCUsWxZZu/t/8XKGy2JoJK/O4PhYJnevWvZzJFIAa4YEu+fJt+BFfzkFFMQxl4xbeBV05DvTw=="
 nicepaySNAP.setXPartnerID = "IONPAYTEST"
 nicepaySNAP.setXExternalID = "OrdNo" + datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 nicepaySNAP.setChannelID = "NICE"

@@ -1,1 +1,0 @@
-# nicepay-python-V2

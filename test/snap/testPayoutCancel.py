@@ -20,8 +20,8 @@ class testPayoutCancel:
 
     bodyPayoutCancel = (
         builderPayout.BuildPayoutCancel()
-        .setOriginalPartnerReferenceNo("OrdNo20241109192751")
-        .setOriginalReferenceNo("IONPAYTEST07202411091927512277")
+        .setOriginalPartnerReferenceNo("OrdNo20241114015744")
+        .setOriginalReferenceNo("IONPAYTEST07202411140157459798")
         .setMerchantId("IONPAYTEST")
         .build()
     )

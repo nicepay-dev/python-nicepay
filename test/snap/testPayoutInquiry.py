@@ -21,9 +21,9 @@ class testPayoutInquiry:
     bodyPayoutInquiry = (
         builderPayout.BuildPayoutInquiry()
         .setMerchantId("IONPAYTEST")
-        .setOriginalPartnerReferenceNo("OrdNo20241016163626")
-        .setOriginalReferenceNo("IONPAYTEST07202410161636267454")
-        .setBeneficiaryAccountNo("12355874912")
+        .setOriginalPartnerReferenceNo("OrdNo20241114015744")
+        .setOriginalReferenceNo("IONPAYTEST07202411140157459798")
+        .setBeneficiaryAccountNo("5345000060")
         .build()
     )
 

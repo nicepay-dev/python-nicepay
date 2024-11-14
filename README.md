@@ -185,33 +185,33 @@ StringDataToSign: POST:/api/v1.0/transfer-va/create-va:eyJ0eXAiOiJKV1QiLCJhbGciO
 Signature: w7BpJ392jzRkAgvWC79Zawvztm/l1D+bxIJWgGq59xih0SuAi4PoTtUAUIXcOLuvZ3pYaSs8Mc1QZxhbVMMBqQ==
 ```
 
-You can view a code example in the following **[UtilSignature.py](http://103.20.51.40:8012/logIn.do)** class.
+You can view a code example in the following **[UtilSignature.py](https://github.com/nicepay-dev/python-nicepay/blob/main/util/utilSignature.py)** class.
 ## 3. Other Sample
 
 Integration test are available for SNAP :
-- [Virtual Account Regist Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Virtual Account Inquiry Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Virtual Account Cancel Unit Test](http://103.20.51.40:8012/logIn.do)
-- [E-Wallet Regist Unit Test](http://103.20.51.40:8012/logIn.do)
-- [E-Wallet Inquiry Unit Test](http://103.20.51.40:8012/logIn.do)
-- [E-Wallet Refund Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Qris Regist Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Qris Inquiry Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Qris Refund Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payout Regist Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payout Inquiry Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payout Approve Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payout Reject Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payout Cancel Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payout Balance Inquiry Unit Test](http://103.20.51.40:8012/logIn.do)
+- [Virtual Account Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testVirtualAccount.py)
+- [Virtual Account Inquiry Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testVirtualAccountInquiry.py)
+- [Virtual Account Cancel Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testVirtualAccountCancel.py)
+- [E-Wallet Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testDirectDebit.py)
+- [E-Wallet Inquiry Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testDirectDebitInquiry.py)
+- [E-Wallet Refund Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testDirectDebitRefund.py)
+- [Qris Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testQris.py)
+- [Qris Inquiry Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testQrisInquiry.py)
+- [Qris Refund Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testQrisRefund.py)
+- [Payout Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayout.py)
+- [Payout Inquiry Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayoutInquiry.py)
+- [Payout Approve Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayoutApprove.py)
+- [Payout Reject Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayoutReject.py)
+- [Payout Cancel Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayoutReject.py)
+- [Payout Balance Inquiry Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayoutBalanceInquiry.py)
 
 ##### Integration test are available for V2 APIs :
-- [Virtual Account V2 Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Inquiry V2 Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Payment V2 Unit Test](http://103.20.51.40:8012/logIn.do)
-- [Cancel V2 Unit Test](http://103.20.51.40:8012/logIn.do)
+- [Virtual Account V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testVirtualAccount.py)
+- [Inquiry V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testInquiry.py)
+- [Payment V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testPayment.py)
+- [Cancel V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testCancel.py)
 
-or you can view a example in the following [V2 APIs](http://103.20.51.40:8012/logIn.do)
+or you can view a example in the following [V2 APIs](https://github.com/nicepay-dev/python-nicepay/tree/main/test/v2)
 
 ## 4. Get Help
 - [Nicepay Docs](https://docs.nicepay.co.id/)

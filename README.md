@@ -26,6 +26,7 @@ Python `v.3.11.9`
 
 - `pycryptodome`
 - `requests`
+- `twine`
 
 
 ## 2. Usage

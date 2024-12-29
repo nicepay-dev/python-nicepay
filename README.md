@@ -11,14 +11,23 @@ This library provides access to Nicepay BI SNAP and V2 APIs.
 - `v2 professional`
 
 ## 1. Installation
-You can clone or [download](https://github.com/nicepay-dev/python-nicepay) our source code, then import the folder manually into your project.
+You can clone or [download](https://github.com/nicepay-dev/python-nicepay) our source code,and compile it into a Jar, 
+then import the jar manually into your project.
 #####
-Clone Repository :
+1.1 Clone Repository :
 ```bash
 git clone https://github.com/nicepay-dev/python-nicepay.git
 ```
+##### 
+1.2 Install with Package Manager [PyPI](https://pypi.org/project/python-nicepay/)
+#####
+If you are using PyPI, install the library via the terminal :
+```xml
+pip install python-nicepay
+```
+This will download and install the package, along with its dependencies, into your project. Make sure Python 3.11 is properly set up before running this command.
 
-#### 1.1 Requirement 
+#### 1.3 Requirement 
 **Language :** 
 Python `v.3.11.9`
 
@@ -26,8 +35,6 @@ Python `v.3.11.9`
 
 - `pycryptodome`
 - `requests`
-- `twine`
-
 
 ## 2. Usage
 Get your credentials from [Nicepay Dashboard](http://103.20.51.40:8012/logIn.do)

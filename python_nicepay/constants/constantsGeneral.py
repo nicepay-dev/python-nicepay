@@ -1,6 +1,3 @@
-from build.lib.python_nicepay.constants import constantsGeneral
-
-
 class ConstantsGeneral:
 
     _SANDBOX_BASE_URL = "https://dev.nicepay.co.id/nicepay"

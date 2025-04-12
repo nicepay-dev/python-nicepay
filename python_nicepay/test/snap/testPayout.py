@@ -4,6 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderPayout, builderAccessToken
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
+from python_nicepay.data.builder import builderEnvirontment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -43,14 +44,20 @@ class testPayout:
         .setBeneficiaryCoMgmtName("Hantu Kesorean")
         .setBeneficiaryCoShName("")
         .setPayoutMethod("1")
-        .setReservedDt("20241115")
-        .setReservedTm("120000")
+        .setReservedDt("")
+        .setReservedTm("")
         .setDeliveryId("")
         .setDeliveryNm("Merchant's Name")
         .setAmount(amount)
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(False)
+                   .isProduction(False)
+                   .build())
+
     result = SnapService.serviceTransaction(bodyCreateToken.jsonAccessToken(),
                                             bodyPayout.jsonPayout(),
-                                            ConstantsEndpoints.payout())
+                                            ConstantsEndpoints.payout(),
+                                            environment)

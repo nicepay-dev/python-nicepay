@@ -4,6 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderPayout, builderAccessToken
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
+from python_nicepay.data.builder import builderEnvirontment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -23,11 +24,17 @@ class testPayoutBalanceInquiry:
 
     bodyPayoutApprove = (
         builderPayout.BuildPayoutBalanceInquiry()
-        .setAccountNo("NORMALTEST")
+        .setAccountNo("IONPAYTEST")
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(False)
+                   .isProduction(False)
+                   .build())
+
     result = SnapService.serviceTransaction(bodyCreateToken.jsonAccessToken(),
                                             bodyPayoutApprove.jsonPayoutBalanceInquiry(),
-                                            ConstantsEndpoints.balanceInquiryPayout())
+                                            ConstantsEndpoints.balanceInquiryPayout(),
+                                            environment)

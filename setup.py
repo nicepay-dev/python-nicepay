@@ -5,14 +5,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='python-nicepay',
-    version='1.0.4',
+    version='1.0.5',
     packages=find_packages(),
     include_package_data=True,
     description='This is the Official Python API client / library for NICEPAY Payment API',
     long_description_content_type='text/markdown',
     long_description=long_description,
-    author='Harfa Thandila',
-    author_email='harfa.thandila@nicepay.co.id',
+    author='xxx',
+    author_email='xxx@nicepay.co.id',
     url='https://github.com/nicepay-dev/python-nicepay',
     license='',
     classifiers=[

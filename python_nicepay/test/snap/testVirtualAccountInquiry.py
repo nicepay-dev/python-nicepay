@@ -2,6 +2,7 @@ from python_nicepay.data.builder.snap import builderAccessToken, builderVirtualA
 from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
+from python_nicepay.data.builder import builderEnvirontment
 
 log = Log()
 
@@ -19,7 +20,7 @@ class testVirtualAccountInquiry:
     }
 
     additionalInfo = {
-        "tXidVA": "IONPAYTEST02202411130910178964",
+        "tXidVA": "IONPAYTEST02202502072021486520",
         "totalAmount": totalAmount,
         "trxId": "123",
     }
@@ -28,12 +29,18 @@ class testVirtualAccountInquiry:
         builderVirtualAccount.BuildInquiryVA()
         .setPartnerServiceId("")
         .setCustomerNo("")
-        .setVirtualAccountNo("884800040910178964")
+        .setVirtualAccountNo("111111102021486520")
         .setInquiryRequestId("")
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(False)
+                   .isProduction(False)
+                   .build())
+
     result = SnapService.serviceTransaction(bodyCreateToken.jsonAccessToken(),
                                             bodyInquiryVA.jsonVAInquiry(),
-                                            ConstantsEndpoints.inquiryVA())
+                                            ConstantsEndpoints.inquiryVA(),
+                                            environment)

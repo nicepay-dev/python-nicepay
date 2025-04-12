@@ -5,13 +5,15 @@ class Cancel:
                  referenceNo,
                  cancelType,
                  cancelMsg,
-                 amt):
+                 amt,
+                 cancelUserId):
         self.payMethod = payMethod
         self.tXid = tXid
         self.referenceNo = referenceNo
         self.cancelType = cancelType
         self.cancelMsg = cancelMsg
         self.amt = amt
+        self.cancelUserId = cancelUserId
 
     def jsonCancel(self):
         return ({
@@ -20,7 +22,8 @@ class Cancel:
             "referenceNo": self.referenceNo,
             "cancelType": self.cancelType,
             "cancelMsg": self.cancelMsg,
-            "amt": self.amt
+            "amt": self.amt,
+            "cancelUserId": self.cancelUserId
         })
 
 class BuilderCancel:
@@ -31,6 +34,7 @@ class BuilderCancel:
         self.cancelType = None
         self.cancelMsg = None
         self.amt = None
+        self.cancelUserId = None
 
     def setPayMethod(self, payMethod):
         self.payMethod = payMethod
@@ -56,6 +60,10 @@ class BuilderCancel:
         self.amt = amt
         return self
 
+    def setCancelUserId(self, cancelUserId):
+        self.cancelUserId = cancelUserId
+        return self
+
 
 class BuildCancel(BuilderCancel):
     def build(self):
@@ -65,5 +73,6 @@ class BuildCancel(BuilderCancel):
             self.referenceNo,
             self.cancelType,
             self.cancelMsg,
-            self.amt
+            self.amt,
+            self.cancelUserId,
         )

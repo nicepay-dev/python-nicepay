@@ -7,13 +7,14 @@ from python_nicepay.util.utilGeneral import General
 from python_nicepay.util.utilLogging import Log
 
 log = Log()
-host = ConstantsGeneral.getSandboxBaseUrl()  # ENVIRONMENT
+# host = ConstantsGeneral.getSandboxBaseUrl()  # ENVIRONMENT
 
 
 class SnapService:
     log.headers("Initialization")
     @staticmethod
-    def serviceOAUTH(body):
+    def serviceOAUTH(body, environment):
+        host = environment.getHost()
 
         headers = dataGenerator.getOAUTHHeader()
         endpoint = ConstantsEndpoints.accessToken()
@@ -37,8 +38,9 @@ class SnapService:
         return accessToken
 
     @staticmethod
-    def serviceTransaction(bodyAccessToken, body, endpoint,httpMethod="POST"):
+    def serviceTransaction(bodyAccessToken, body, endpoint, environment, httpMethod="POST"):
         global receiveResponse
+        host = environment.getHost()
         receiveAccessToken = SnapService.serviceOAUTH(bodyAccessToken)
         log.headers("Services Init")
         headerTransaction = dataGenerator.getTransactionHeader(receiveAccessToken,

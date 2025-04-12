@@ -4,6 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderAccessToken, builderDirectDebit
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
+from python_nicepay.data.builder import builderEnvirontment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -40,6 +41,12 @@ class testDirectDebitRefund:
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(False)
+                   .isProduction(False)
+                   .build())
+
     result = SnapService.serviceTransaction(bodyCreateToken.jsonAccessToken(),
                                             bodyDirectDebitRefund.jsonDirectDebitRefund(),
-                                            ConstantsEndpoints.refundDirectDebit())
+                                            ConstantsEndpoints.refundDirectDebit(),
+                                            environment)

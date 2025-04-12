@@ -7,12 +7,13 @@ from python_nicepay.service.v2EnterpriseService import ServiceNicepay
 class testCancel:
     bodyCancel = (
         builderCancel.BuildCancel()
-        .setPayMethod(ConstantsGeneral.getPayMethodEWallet())
-        .setTxid("IONPAYTEST05202501122104399654")
-        .setReferenceNo("OrdNo20250112210438")
+        .setPayMethod(ConstantsGeneral.getPayMethodPayloan())
+        .setTxid("IONPAYTEST06202501130822233626")
+        .setReferenceNo("OrdNo20250113082212")
+        .setCancelUserId("Admin")
         .setCancelType("1")
         .setCancelMsg("Testing Cancellation - n1tr0")
-        .setAmt("1")
+        .setAmt("10000")
         .build()
     )
 

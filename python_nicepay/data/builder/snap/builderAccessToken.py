@@ -19,6 +19,7 @@ class BuilderAccessToken:
 
     def setGrantType(self, grantType):
         self.grantType = grantType
+
         return self
 
     def setAdditionalInfo(self, additionalInfo):

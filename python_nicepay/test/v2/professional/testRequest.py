@@ -1,3 +1,4 @@
+from python_nicepay.data.builder import builderEnvirontment
 from python_nicepay.data.builder.v2.professional import builderRequest, builderCartData, builderSellers
 from python_nicepay.data.builder.v2.professional.dataGenerator import DataGenerator
 from python_nicepay.service.v2ProfessionalService import ServiceNicepay
@@ -62,6 +63,11 @@ class testRequest:
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(True)
+                   .isProduction(False)
+                   .build())
+
     response = ServiceNicepay.serviceRedirect(DataGenerator.getTransactionBody(bodyRequest.jsonRequest(),
                                                                                bodyCartData.jsonCartData(),
-                                                                               bodySellers.jsonSellers()))
+                                                                               bodySellers.jsonSellers()),environment)

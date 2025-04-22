@@ -42,7 +42,7 @@ class testQris:
 
     bodyQris = (
         builderQris.BuildQris()
-        .setMerchantId("DPRSOLOTES")
+        .setMerchantId("IONPAYTEST")
         .setPartnerReferenceNo("OrdNo" + timestamp)
         .setStoreId("NICEPAY")
         .setValidityPeriod("")
@@ -52,7 +52,7 @@ class testQris:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(False)
+                   .isCloud(True)
                    .isProduction(False)
                    .build())
 

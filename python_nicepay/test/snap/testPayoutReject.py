@@ -27,7 +27,7 @@ class testPayoutReject:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(False)
+                   .isCloud(True)
                    .isProduction(False)
                    .build())
 

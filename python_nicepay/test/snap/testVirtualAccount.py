@@ -4,7 +4,9 @@ from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
 from python_nicepay.data.builder import builderEnvirontment
 
+
 log = Log()
+
 
 
 class testVirtualAccount:
@@ -19,11 +21,11 @@ class testVirtualAccount:
                    "currency": "IDR"
                    }
 
-    additionalInfo = {"bankCd": "CENA",
+    additionalInfo = {"bankCd": "BMRI",
                       "goodsNm": "Merchant Goods 1",
                       "dbProcessUrl": "https://webhook.site/ab809df2-f413-4859-a2be-7e939144870f",
-                      "vacctValidDt": "20250305",
-                      "vacctValidTm": "150000",
+                      "vacctValidDt": "",
+                      "vacctValidTm": "",
                       "msId": "",
                       "msFee": "",
                       "msFeeType": "",
@@ -44,7 +46,7 @@ class testVirtualAccount:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(False)
+                   .isCloud(True)
                    .isProduction(False)
                    .build())
 

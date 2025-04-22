@@ -1,4 +1,5 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
+from python_nicepay.data.builder import builderEnvirontment
 from python_nicepay.data.builder.v2.enterprise import builderVirtualAccount, builderCartData
 from python_nicepay.data.builder.v2.enterprise.dataGenerator import DataGenerator
 from python_nicepay.service.v2EnterpriseService import ServiceNicepay
@@ -36,5 +37,10 @@ class testVirtualAccount:
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(True)
+                   .isProduction(False)
+                   .build())
+
     response = ServiceNicepay.serviceRequest(DataGenerator.getTransactionBody(bodyVirtualAccount.jsonVirtualAccount(),
-                                                                              bodyCartData.jsonCartData()))
+                                                                              bodyCartData.jsonCartData()), environment)

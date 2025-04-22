@@ -10,5 +10,10 @@ class testPayoutApprove:
         .build()
     )
 
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(True)
+                   .isProduction(False)
+                   .build())
+
     response = ServiceNicepay.servicePayoutApprove(DataGenerator.getPayoutApproveBody(
-        bodyPayoutApprove.jsonPayoutApprove()))
+        bodyPayoutApprove.jsonPayoutApprove()), environment)

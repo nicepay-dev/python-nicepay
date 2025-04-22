@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from python_nicepay.data.builder import builderEnvirontment
 from python_nicepay.data.builder.v2.enterprise import builderPayment
 from python_nicepay.data.builder.v2.enterprise.dataGenerator import DataGenerator
 from python_nicepay.service.v2EnterpriseService import ServiceNicepay
@@ -21,4 +22,9 @@ class testPayment:
         .build()
     )
 
-    response = ServiceNicepay.servicePayment(DataGenerator.getPaymentBody(bodyPayment.dataPayment()))
+    environment = (builderEnvirontment.BuildEnvirontment()
+                   .isCloud(True)
+                   .isProduction(False)
+                   .build())
+
+    response = ServiceNicepay.servicePayment(DataGenerator.getPaymentBody(bodyPayment.dataPayment()), environment)

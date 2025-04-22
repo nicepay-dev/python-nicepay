@@ -14,7 +14,9 @@ class ServiceNicepay:
 
     # REGISTRATION REQUEST
     @staticmethod
-    def serviceRequest(body):
+    def serviceRequest(body, environment):
+        host = environment.getHost()
+
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.registration()
         data = apiClient.send(host,
@@ -30,7 +32,9 @@ class ServiceNicepay:
 
     # PAYMENT REQUEST
     @staticmethod
-    def servicePayment(data):
+    def servicePayment(data, environment):
+
+        host = environment.getHost()
         endpoint = ConstantsEndpoints.payment()
         response = apiClient.get(host,
                                  data,
@@ -43,7 +47,9 @@ class ServiceNicepay:
 
     # CANCEL REQUEST
     @staticmethod
-    def serviceCancel(data):
+    def serviceCancel(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.cancel()
         response = apiClient.send(host,
@@ -59,7 +65,9 @@ class ServiceNicepay:
 
     # INQUIRY REQUEST
     @staticmethod
-    def serviceInquiry(data):
+    def serviceInquiry(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.inquiry()
         response = apiClient.send(host,
@@ -72,7 +80,9 @@ class ServiceNicepay:
 
     # PAYOUT REGISTRATION REQUEST
     @staticmethod
-    def servicePayoutReg(data):
+    def servicePayoutReg(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutRegistration()
         response = apiClient.send(host,
@@ -85,7 +95,9 @@ class ServiceNicepay:
 
     # PAYOUT APPROVE REQUEST
     @staticmethod
-    def servicePayoutApprove(data):
+    def servicePayoutApprove(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutApprove()
         response = apiClient.send(host,
@@ -98,7 +110,9 @@ class ServiceNicepay:
 
     # PAYOUT REJECT REQUEST
     @staticmethod
-    def servicePayoutReject(data):
+    def servicePayoutReject(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutReject()
         response = apiClient.send(host,
@@ -111,7 +125,9 @@ class ServiceNicepay:
 
     # PAYOUT INQUIRY REQUEST
     @staticmethod
-    def servicePayoutInquiry(data):
+    def servicePayoutInquiry(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutInquiry()
         response = apiClient.send(host,
@@ -124,7 +140,9 @@ class ServiceNicepay:
 
     # PAYOUT CANCEL REQUEST
     @staticmethod
-    def servicePayoutCancel(data):
+    def servicePayoutCancel(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutCancel()
         response = apiClient.send(host,
@@ -137,7 +155,9 @@ class ServiceNicepay:
 
     # PAYOUT BALANCE INQUIRY REQUEST
     @staticmethod
-    def servicePayoutBalanceInquiry(data):
+    def servicePayoutBalanceInquiry(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutBalanceInq()
         response = apiClient.send(host,
@@ -150,7 +170,9 @@ class ServiceNicepay:
 
     # PAYOUT TRANSACTION HISTORY INQUIRY REQUEST
     @staticmethod
-    def servicePayoutTransHistInq(data):
+    def servicePayoutTransHistInq(data, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.payoutTransHistInq()
         response = apiClient.send(host,
@@ -163,7 +185,9 @@ class ServiceNicepay:
 
     # VA FIXED OPEN REGISTRATION REQUEST
     @staticmethod
-    def serviceVAFixedOpenRegist(data):
+    def serviceVAFixedOpenRegist(data, environment):
+
+        host = environment.getHost()
         endpoint = ConstantsEndpoints.vaFixedOpenRegist()
         response = apiClient.sendUrl(host,
                                      data,
@@ -173,7 +197,9 @@ class ServiceNicepay:
 
     # VA FIXED OPEN CUSTOMER INQUIRY
     @staticmethod
-    def serviceVAFixedOpenCustInq(data):
+    def serviceVAFixedOpenCustInq(data, environment):
+
+        host = environment.getHost()
         endpoint = ConstantsEndpoints.vaFixedOpenCustInq()
         response = apiClient.sendUrl(host,
                                      data,
@@ -183,7 +209,9 @@ class ServiceNicepay:
 
     # VA FIXED OPEN DEPOSIT INQUIRY
     @staticmethod
-    def serviceVAFixedOpenDepositInq(data):
+    def serviceVAFixedOpenDepositInq(data, environment):
+
+        host = environment.getHost()
         endpoint = ConstantsEndpoints.vaFixedOpenDepositInq()
         response = apiClient.sendUrl(host,
                                      data,
@@ -193,7 +221,9 @@ class ServiceNicepay:
 
     # VA FIXED OPEN UPDATE
     @staticmethod
-    def serviceVAFixedOpenUpdate(data):
+    def serviceVAFixedOpenUpdate(data, environment):
+
+        host = environment.getHost()
         endpoint = ConstantsEndpoints.vaFixedOpenCustUpdate()
         response = apiClient.sendUrl(host,
                                      data,

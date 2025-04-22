@@ -1,3 +1,4 @@
+from python_nicepay.constants.constantsGeneral import ConstantsGeneral
 from python_nicepay.data.builder.snap import builderAccessToken, builderVirtualAccount
 from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.service.snapService import SnapService
@@ -7,6 +8,7 @@ from python_nicepay.data.builder import builderEnvirontment
 log = Log()
 
 class testVirtualAccountInquiry:
+
     bodyCreateToken = (
         builderAccessToken.BuildAccessToken()
         .setGrantType("client_credentials")
@@ -20,7 +22,7 @@ class testVirtualAccountInquiry:
     }
 
     additionalInfo = {
-        "tXidVA": "IONPAYTEST02202502072021486520",
+        "tXidVA": "IONPAYTEST02202504161014301308",
         "totalAmount": totalAmount,
         "trxId": "123",
     }
@@ -29,14 +31,14 @@ class testVirtualAccountInquiry:
         builderVirtualAccount.BuildInquiryVA()
         .setPartnerServiceId("")
         .setCustomerNo("")
-        .setVirtualAccountNo("111111102021486520")
+        .setVirtualAccountNo("70014000091014301308")
         .setInquiryRequestId("")
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(False)
+                   .isCloud(True)
                    .isProduction(False)
                    .build())
 

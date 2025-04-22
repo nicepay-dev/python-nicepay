@@ -15,7 +15,9 @@ class ServiceNicepay:
     log.headers("Initialization")
 
     @staticmethod
-    def serviceRequest(body):
+    def serviceRequest(body, environment):
+
+        host = environment.getHost()
         headers = DataGenerator.getTransactionHeader()
         endpoint = ConstantsEndpoints.registrationRedirect()
         response = apiClient.send(host,
@@ -35,8 +37,9 @@ class ServiceNicepay:
         return tXid
 
     @staticmethod
-    def serviceRedirect(body):
-        tXid = ServiceNicepay.serviceRequest(body)
+    def serviceRedirect(body, environment):
+        host = environment.getHost()
+        tXid = ServiceNicepay.serviceRequest(body, environment)
         endpoint = ConstantsEndpoints.paymentRedirect()
         response = apiClient.redirect(host,
                                       tXid,

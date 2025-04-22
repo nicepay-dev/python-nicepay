@@ -39,9 +39,10 @@ class SnapService:
 
     @staticmethod
     def serviceTransaction(bodyAccessToken, body, endpoint, environment, httpMethod="POST"):
+
         global receiveResponse
         host = environment.getHost()
-        receiveAccessToken = SnapService.serviceOAUTH(bodyAccessToken)
+        receiveAccessToken = SnapService.serviceOAUTH(bodyAccessToken, environment)
         log.headers("Services Init")
         headerTransaction = dataGenerator.getTransactionHeader(receiveAccessToken,
                                                                body,

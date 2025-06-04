@@ -28,7 +28,7 @@ class testDirectDebit:
     )
 
     amount = {
-        "value": "1000.00",
+        "value": "1.00",
         "currency": "IDR"
     }
 
@@ -46,20 +46,20 @@ class testDirectDebit:
     ]
 
     additionalInfo = {
-        "mitraCd": "ESHP",
+        "mitraCd": "OVOE",
         "goodsNm": "Merchant Goods 1",
         "billingNm": "Testin Dev",
         "billingPhone": "081363681274",
-        "cartData": "{\"count\":\"2\",\"item\":[{\"img_url\":\"http://img.aaa.com/ima1.jpg\",\"goods_name\":\"Item 1 Name\",\"goods_detail\":\"Item 1 Detail\",\"goods_amt\":\"0.00\",\"goods_quantity\":\"1\"},{\"img_url\":\"http://img.aaa.com/ima2.jpg\",\"goods_name\":\"Item 2 Name\",\"goods_detail\":\"Item 2 Detail\",\"goods_amt\":\"1000.00\",\"goods_quantity\":\"1\"}]}",
-        "dbProcessUrl": "https://webhook.site/f203206c-66ea-4a59-b9d5-a44a289416cf",
-        "callBackUrl": "https://www.nicepay.co.id/IONPAY_CLIENT/paymentResult.jsp",
+        "cartData": "{\"count\":\"2\",\"item\":[{\"img_url\":\"http://img.aaa.com/ima1.jpg\",\"goods_name\":\"Item 1 Name\",\"goods_detail\":\"Item 1 Detail\",\"goods_amt\":\"0.00\",\"goods_quantity\":\"1\"},{\"img_url\":\"http://img.aaa.com/ima2.jpg\",\"goods_name\":\"Item 2 Name\",\"goods_detail\":\"Item 2 Detail\",\"goods_amt\":\"1.00\",\"goods_quantity\":\"1\"}]}",
+        "dbProcessUrl": "https://webhook.site/5cac2a81-5862-4734-95f4-e20887eef24b",
+        "callBackUrl": "https://dev.nicepay.co.id/IONPAY_CLIENT/paymentResult.jsp",
         "msId": ""
     }
 
     bodyDirectDebit = (
         builderDirectDebit.BuildDirectDebit()
         .setPartnerReferenceNo("OrdNo" + timestamp)
-        .setMerchantId("IONPAYTEST")
+        .setMerchantId("DPRSOLOTES")
         .setSubMerchantId("")
         .setExternalStoreId("")
         .setValidUpTo("")
@@ -72,7 +72,7 @@ class testDirectDebit:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

@@ -17,7 +17,7 @@ class testQrisRefund:
     )
 
     refundAmount = {
-        "value": "1000.00",
+        "value": "10000.00",
         "currency": "IDR"
     }
 
@@ -27,10 +27,10 @@ class testQrisRefund:
 
     bodyQrisInquiry = (
         builderQris.BuildQrisRefund()
-        .setMerchantId("IONPAYTEST")
+        .setMerchantId("DPRSOLOTES")
         .setExternalStoreId("NICEPAY")
-        .setOriginalReferenceNo("IONPAYTEST08202411140055296692")
-        .setOriginalPartnerReferenceNo("OrdNo20241114005529")
+        .setOriginalReferenceNo("DPRSOLOTES08202505271200355567")
+        .setOriginalPartnerReferenceNo("OrdNo20250527120034")
         .setPartnerRefundNo("51")
         .setRefundAmount(refundAmount)
         .setReason("Test Refund QRIS SNAP")

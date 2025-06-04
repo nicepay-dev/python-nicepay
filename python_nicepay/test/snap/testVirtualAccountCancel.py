@@ -19,23 +19,23 @@ class testVirtualAccountCancel:
                    }
 
     additionalInfo = {
-            "tXidVA": "DPRSOLOTES02202501221717512009",
+            "tXidVA": "DPRSOLOTES02202505261024368128",
             "totalAmount": totalAmount,
             "cancelMessage": "Cancel Virtual Account"
                       }
 
     bodyCancelVA = (
         builderVirtualAccount.BuildCancelVA()
-        .setPartnerServiceId("")
-        .setCustomerNo("")
-        .setVirtualAccountNo("9912304000063000")
-        .setTrxId("123")
+        .setPartnerServiceId("7001400002")
+        .setCustomerNo("012090")
+        .setVirtualAccountNo("7001400002012090")
+        .setTrxId("DPRSOLO123456")
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

@@ -26,10 +26,10 @@ class testDirectDebitInquiry:
 
     bodyDirectDebitInquiry = (
         builderDirectDebit.BuildDirectDebitInquiry()
-        .setMerchantId("IONPAYTEST")
+        .setMerchantId("DPRSOLOTES")
         .setSubMerchantId("")
-        .setOriginalPartnerReferenceNo("OrdNo20250416142716")
-        .setOriginalReferenceNo("IONPAYTEST05202504161427173572")
+        .setOriginalPartnerReferenceNo("OrdNo20250526140240")
+        .setOriginalReferenceNo("DPRSOLOTES05202505261402419199")
         .setServiceCode("54")
         .setTransactionDate(timestamp)
         .setAmount(amount)
@@ -38,7 +38,7 @@ class testDirectDebitInquiry:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

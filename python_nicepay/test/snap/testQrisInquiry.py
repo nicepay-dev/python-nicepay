@@ -26,15 +26,15 @@ class testQrisInquiry:
         builderQris.BuildQrisInquiry()
         .setMerchantId("DPRSOLOTES")
         .setExternalStoreId("NICEPAY")
-        .setOriginalReferenceNo("DPRSOLOTES08202501222205266470")
-        .setOriginalPartnerReferenceNo("OrdNo20250122220512")
+        .setOriginalReferenceNo("DPRSOLOTES08202505271127263894")
+        .setOriginalPartnerReferenceNo("OrdNo20250527112725")
         .setServiceCode("47")
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

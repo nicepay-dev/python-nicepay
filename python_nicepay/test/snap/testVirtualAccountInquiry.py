@@ -22,23 +22,23 @@ class testVirtualAccountInquiry:
     }
 
     additionalInfo = {
-        "tXidVA": "IONPAYTEST02202504161014301308",
+        "tXidVA": "DPRSOLOTES02202505261024368128",
         "totalAmount": totalAmount,
-        "trxId": "123",
+        "trxId": "DPRSOLO123456",
     }
 
     bodyInquiryVA = (
         builderVirtualAccount.BuildInquiryVA()
-        .setPartnerServiceId("")
-        .setCustomerNo("")
-        .setVirtualAccountNo("70014000091014301308")
-        .setInquiryRequestId("")
+        .setPartnerServiceId("7001400002")
+        .setCustomerNo("012090")
+        .setVirtualAccountNo("7001400002012090")
+        .setInquiryRequestId("DPRSOLO123456")
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

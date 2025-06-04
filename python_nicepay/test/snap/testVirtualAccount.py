@@ -23,7 +23,7 @@ class testVirtualAccount:
 
     additionalInfo = {"bankCd": "BMRI",
                       "goodsNm": "Merchant Goods 1",
-                      "dbProcessUrl": "https://webhook.site/ab809df2-f413-4859-a2be-7e939144870f",
+                      "dbProcessUrl": "https://webhook.site/5cac2a81-5862-4734-95f4-e20887eef24b",
                       "vacctValidDt": "",
                       "vacctValidTm": "",
                       "msId": "",
@@ -39,14 +39,14 @@ class testVirtualAccount:
         .setCustomerNo("")
         .setVirtualAccountNo("")
         .setVirtualAccountName("TESTING DEV")
-        .setTrxId("123")
+        .setTrxId("DPRSOLO123456")
         .setTotalAmount(totalAmount)
         .setAdditionalInfo(additionalInfo)
         .build()
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

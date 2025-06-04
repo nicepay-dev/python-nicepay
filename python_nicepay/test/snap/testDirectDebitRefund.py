@@ -30,10 +30,10 @@ class testDirectDebitRefund:
     bodyDirectDebitRefund = (
         builderDirectDebit.BuildDirectDebitRefund()
         .setPartnerRefundNo("RefundNo" + timestamp)
-        .setMerchantId("IONPAYTEST")
+        .setMerchantId("DPRSOLOTES")
         .setSubMerchantId("")
-        .setOriginalPartnerReferenceNo("OrdNo20241113140616")
-        .setOriginalReferenceNo("IONPAYTEST05202411131406163958")
+        .setOriginalPartnerReferenceNo("OrdNo20250526140240")
+        .setOriginalReferenceNo("DPRSOLOTES05202505261402419189")
         .setExternalStoreId("NICE")
         .setReason("Testing Refund OVOE SNAP")
         .setRefundAmount(refundAmount)
@@ -42,7 +42,7 @@ class testDirectDebitRefund:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

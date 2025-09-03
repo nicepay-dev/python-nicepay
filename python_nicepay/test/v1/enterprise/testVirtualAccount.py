@@ -1,8 +1,9 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
 from python_nicepay.data.builder import builderEnvirontment
-from python_nicepay.data.builder.v2.enterprise import builderVirtualAccount, builderCartData
-from python_nicepay.data.builder.v2.enterprise.dataGenerator import DataGenerator
-from python_nicepay.service.v2EnterpriseService import ServiceNicepay
+from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
+from python_nicepay.data.builder.v2.enterprise import builderCartData
+from python_nicepay.data.builder.v1.enterprise import builderVirtualAccount
+from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 
 
 class testVirtualAccount:
@@ -27,9 +28,9 @@ class testVirtualAccount:
     )
 
     bodyVirtualAccount = (
-        builderVirtualAccount.BuildVirtualAccount()
+        builderVirtualAccount.BuildVirtualAccountV1()
         .setPayMethod(ConstantsGeneral.getPayMethodVirtualAccount())
-        .setBankCd("BRIN")
+        .setBankCd("BMRI")
         .setVacctValidDt("")
         .setVacctValidTm("")
         .setMerFixAcctId("")
@@ -42,5 +43,5 @@ class testVirtualAccount:
                    .isProduction(False)
                    .build())
 
-    response = ServiceNicepay.serviceRequest(DataGenerator.getTransactionBody(bodyVirtualAccount.jsonVirtualAccount(),
+    response = ServiceNicepayV1.serviceRequestV1(DataGeneratorV1.getTransactionBodyV1(bodyVirtualAccount.jsonVirtualAccountV1(),
                                                                               bodyCartData.jsonCartData()), environment)

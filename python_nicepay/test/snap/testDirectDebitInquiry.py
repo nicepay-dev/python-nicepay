@@ -26,10 +26,10 @@ class testDirectDebitInquiry:
 
     bodyDirectDebitInquiry = (
         builderDirectDebit.BuildDirectDebitInquiry()
-        .setMerchantId("DPRSOLOTES")
+        .setMerchantId("TNICEEW051")
         .setSubMerchantId("")
-        .setOriginalPartnerReferenceNo("OrdNo20250526140240")
-        .setOriginalReferenceNo("DPRSOLOTES05202505261402419199")
+        .setOriginalPartnerReferenceNo("OrdNo20250807095315")
+        .setOriginalReferenceNo("TNICEEW05105202508070953150774")
         .setServiceCode("54")
         .setTransactionDate(timestamp)
         .setAmount(amount)

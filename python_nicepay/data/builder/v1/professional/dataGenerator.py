@@ -22,18 +22,19 @@ class DataGenerator:
         cartData = b.replace('"', '\"')
         c = json.dumps(sellers, indent=None, separators=(',', ':'))
         sellers = c.replace('"', '\"')
-        random = datetime.now().strftime("%Y%m%d%H%M%S")
-        referenceNo = "OrdNo" + random
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        referenceNo = "OrdNo" + timestamp
 
         iMid = ConstantsGeneral.getImid()
         merchantKey = ConstantsGeneral.getMerchantKey()
-        merchantToken = MerchantToken.getMerchantToken(f"{iMid}{referenceNo}{amt}{merchantKey}")
+        merchantToken = MerchantToken.getMerchantToken(f"{timestamp}{iMid}{referenceNo}{amt}{merchantKey}")
         currency = ConstantsGeneral.getCurrency()
         shopId = ConstantsGeneral.getShopId()
         userIp = ConstantsGeneral.getUserIp()
         callBackUrl = ConstantsGeneral.getCallbackUrl()
         dbProcessUrl = ConstantsGeneral.getDbProcessUrl()
 
+        bodyMap["timeStamp"] = timestamp
         bodyMap["iMid"] = iMid
         bodyMap["referenceNo"] = referenceNo
         bodyMap["billingNm"] = "John Doe"

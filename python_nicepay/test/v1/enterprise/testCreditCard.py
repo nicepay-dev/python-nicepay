@@ -1,8 +1,9 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
 from python_nicepay.data.builder import builderEnvirontment
-from python_nicepay.data.builder.v2.enterprise.dataGenerator import DataGenerator
-from python_nicepay.data.builder.v2.enterprise import builderCreditCard, builderCartData
-from python_nicepay.service.v2EnterpriseService import ServiceNicepay
+from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
+from python_nicepay.data.builder.v2.enterprise import builderCartData
+from python_nicepay.data.builder.v1.enterprise import builderCreditCard
+from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 
 
 class testCreditCard:
@@ -27,7 +28,7 @@ class testCreditCard:
     )
 
     bodyCreditCard = (
-        builderCreditCard.BuildCreditCard()
+        builderCreditCard.BuildCreditCardV1()
         .setPayMethod(ConstantsGeneral.getPayMethodCreditCard())
         .setRecurrOpt("")
         .setInstmntMon("1")
@@ -41,7 +42,7 @@ class testCreditCard:
                    .isProduction(False)
                    .build())
 
-    response = ServiceNicepay.serviceRequest(DataGenerator.getTransactionBody(bodyCreditCard.jsonCreditCard(),
+    response = ServiceNicepayV1.serviceRequestV1(DataGeneratorV1.getTransactionBodyV1(bodyCreditCard.jsonCreditCardV1(),
                                                                               bodyCartData.jsonCartData()),
                                                                               environment)
 

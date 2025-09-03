@@ -1,3 +1,5 @@
+import json
+
 import requests
 import urllib.parse
 import webbrowser
@@ -23,7 +25,7 @@ class apiClient:
     @staticmethod
     def sendUrl(host, request, endpoint):
         response = requests.post(url=host + endpoint, data=request)
-        return response.json()
+        return apiClient.safe_json(response)
 
     @staticmethod
     def redirect(host, tXid, endpoint):
@@ -31,4 +33,18 @@ class apiClient:
         webbrowser.open(url)
         return url
 
-
+    def safe_json(response):
+        try:
+            # normal case: already valid JSON
+            return response.json()
+        except ValueError:
+            text = response.text.strip()
+            # try to strip until first {
+            if "{" in text:
+                try:
+                    json_str = text[text.index("{") :]
+                    return json.loads(json_str)
+                except Exception:
+                    pass
+            # fallback: return raw text
+            return {"raw": text}

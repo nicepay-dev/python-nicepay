@@ -22,17 +22,17 @@ class testVirtualAccountInquiry:
     }
 
     additionalInfo = {
-        "tXidVA": "DPRSOLOTES02202505261024368128",
+        "tXidVA": "NORMALTEST02202507071208423217",
         "totalAmount": totalAmount,
-        "trxId": "DPRSOLO123456",
+        "trxId": "NORMAL123457",
     }
 
     bodyInquiryVA = (
         builderVirtualAccount.BuildInquiryVA()
-        .setPartnerServiceId("7001400002")
-        .setCustomerNo("012090")
-        .setVirtualAccountNo("7001400002012090")
-        .setInquiryRequestId("DPRSOLO123456")
+        .setPartnerServiceId("")
+        .setCustomerNo("")
+        .setVirtualAccountNo("8624000100001143")
+        .setInquiryRequestId("")
         .setAdditionalInfo(additionalInfo)
         .build()
     )

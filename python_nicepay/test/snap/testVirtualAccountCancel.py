@@ -19,7 +19,7 @@ class testVirtualAccountCancel:
                    }
 
     additionalInfo = {
-            "tXidVA": "DPRSOLOTES02202505261024368128",
+            "tXidVA": "NORMALTEST02202508121732255632",
             "totalAmount": totalAmount,
             "cancelMessage": "Cancel Virtual Account"
                       }
@@ -27,9 +27,9 @@ class testVirtualAccountCancel:
     bodyCancelVA = (
         builderVirtualAccount.BuildCancelVA()
         .setPartnerServiceId("7001400002")
-        .setCustomerNo("012090")
-        .setVirtualAccountNo("7001400002012090")
-        .setTrxId("DPRSOLO123456")
+        .setCustomerNo("014647")
+        .setVirtualAccountNo("7001400002014647")
+        .setTrxId("NICEPAY123")
         .setAdditionalInfo(additionalInfo)
         .build()
     )

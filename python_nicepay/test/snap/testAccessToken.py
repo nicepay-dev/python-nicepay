@@ -5,11 +5,11 @@ from python_nicepay.data.builder import builderEnvirontment
 
 class testAccessToken:
     # Case if merchant using different config with the constant
-    clientKey = "_CLIENT_KEY_MERCHANT"
-    clientSecret = "_CLIENT_SECRET_MERCHANT"
-    privateKey= "_PRIVATE_KEY_MERCHANT"
-
-    ConstantsGeneral.setSnapConfiguration(clientKey, clientSecret, privateKey)
+    # clientKey = "_CLIENT_KEY_MERCHANT"
+    # clientSecret = "_CLIENT_SECRET_MERCHANT"
+    # privateKey= "_PRIVATE_KEY_MERCHANT"
+    #
+    # ConstantsGeneral.setSnapConfiguration(clientKey, clientSecret, privateKey)
 
     bodyCreateToken = (
         builderAccessToken.BuildAccessToken()

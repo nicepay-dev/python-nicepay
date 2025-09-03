@@ -1,8 +1,9 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
 from python_nicepay.data.builder import builderEnvirontment
-from python_nicepay.data.builder.v2.enterprise import builderCartData, builderConvenienceStore
-from python_nicepay.data.builder.v2.enterprise.dataGenerator import DataGenerator
-from python_nicepay.service.v2EnterpriseService import ServiceNicepay
+from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
+from python_nicepay.data.builder.v2.enterprise import builderCartData
+from python_nicepay.data.builder.v1.enterprise import builderConvenienceStore
+from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 
 
 class testConvenienceStore:
@@ -22,7 +23,7 @@ class testConvenienceStore:
     )
 
     bodyConvenienceStore = (
-        builderConvenienceStore.BuildConvenienceStore()
+        builderConvenienceStore.BuildConvenienceStoreV1()
         .setPayMethod(ConstantsGeneral.getPayMethodConvenienceStore())
         .setMitraCd("INDO")
         .setPayValidDt("")
@@ -37,5 +38,5 @@ class testConvenienceStore:
                    .isProduction(False)
                    .build())
 
-    response = ServiceNicepay.serviceRequest(DataGenerator.getTransactionBody(bodyConvenienceStore.jsonConvenienceStore(),
+    response = ServiceNicepayV1.serviceRequestV1(DataGeneratorV1.getTransactionBodyV1(bodyConvenienceStore.jsonConvenienceStoreV1(),
                                                                               bodyCartData.jsonCartData()), environment)

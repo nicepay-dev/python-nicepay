@@ -14,7 +14,7 @@ class testVAFixedOpenDepositInq:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

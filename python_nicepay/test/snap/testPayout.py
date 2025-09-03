@@ -19,16 +19,16 @@ class testPayout:
     )
 
     amount = {
-        "value": "10000.00",
+        "value": "10001.00",
         "currency": "IDR"
     }
 
     bodyPayout = (
         builderPayout.BuildPayout()
         .setPartnerReferenceNo("OrdNo" + timestamp)
-        .setMerchantId("IONPAYTEST")
+        .setMerchantId("NORMALTEST")
         .setMsId("")
-        .setBeneficiaryAccountNo("5345000060")
+        .setBeneficiaryAccountNo("5930696651")
         .setBeneficiaryName("John Doe")
         .setBeneficiaryPhone("08123456789")
         .setBeneficiaryCustomerResidence("1")
@@ -53,7 +53,7 @@ class testPayout:
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

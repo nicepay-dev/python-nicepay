@@ -23,7 +23,7 @@ class testVirtualAccount:
 
     additionalInfo = {"bankCd": "BMRI",
                       "goodsNm": "Merchant Goods 1",
-                      "dbProcessUrl": "https://webhook.site/5cac2a81-5862-4734-95f4-e20887eef24b",
+                      "dbProcessUrl": "https://webhook.site/888ad12a-ffa9-42b1-af7f-48dfed60c6d1",
                       "vacctValidDt": "",
                       "vacctValidTm": "",
                       "msId": "",
@@ -39,7 +39,7 @@ class testVirtualAccount:
         .setCustomerNo("")
         .setVirtualAccountNo("")
         .setVirtualAccountName("TESTING DEV")
-        .setTrxId("DPRSOLO123456")
+        .setTrxId("NICEPAY123")
         .setTotalAmount(totalAmount)
         .setAdditionalInfo(additionalInfo)
         .build()

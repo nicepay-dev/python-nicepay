@@ -1,10 +1,10 @@
 from python_nicepay.data.builder import builderEnvirontment
 from python_nicepay.data.builder.v2.professional import builderRequest, builderCartData, builderSellers
 from python_nicepay.data.builder.v2.professional.dataGenerator import DataGenerator
-from python_nicepay.service.v2ProfessionalService import ServiceNicepay
+from python_nicepay.service.v1ProfessionalService import ServiceNicepayV1
 
 
-class testRequest:
+class testRedirect:
     amt = 10000
     itemCartData = {
         "goods_id": "GOODS001",
@@ -68,6 +68,6 @@ class testRequest:
                    .isProduction(False)
                    .build())
 
-    response = ServiceNicepay.serviceRedirect(DataGenerator.getTransactionBody(bodyRequest.jsonRequest(),
+    response = ServiceNicepayV1.serviceRedirectV1(DataGenerator.getTransactionBody(bodyRequest.jsonRequest(),
                                                                                bodyCartData.jsonCartData(),
                                                                                bodySellers.jsonSellers()),environment)

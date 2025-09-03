@@ -1,3 +1,6 @@
+from tkinter.messagebox import RETRY
+
+
 class ConstantsEndpoints:
     # SNAP
     _ACCESS_TOKEN = "/v1.0/access-token/b2b"
@@ -41,6 +44,20 @@ class ConstantsEndpoints:
     # V2-PROFESSIONAL
     _REGISTRATION_REDIRECT = "/redirect/v2/registration"
     _PAYMENT_REDIRECT = "/redirect/v2/payment"
+
+    # V1-ENTERPRISE
+    _REQUEST_ONE_PASS_TOKEN = "/api/onePassToken.do"
+    _REQUEST_3DS_TOKEN = "/api/secureVeRequest.do" #PAYMENT = 1 3DS
+    _REQUEST_MIGS_TOKEN = "/api/migsRequest.do" #PAYMENT = 3 MIGS
+    _REGISTRATION_V1 = "/api/onePass.do" #kecuali cc untuk payment
+    _REGISTRATION_V1_EWALLET = "/api/ewalletTrans.do"
+    _INQUIRY_V1 = "/api/onePassStatus.do"
+    _CANCEL_V1 = "/api/onePassAllCancel.do"
+
+    # V1-PROFESSIONAL
+    _REGISTRATION_REDIRECT_V1 = "/api/orderRegist.do"
+    _REDIRECT_INQUIRY_V1 = "/api/orderInquiry.do"
+
 
     #SNAP
     @staticmethod
@@ -194,4 +211,39 @@ class ConstantsEndpoints:
         return ConstantsEndpoints._PAYMENT_REDIRECT
 
 
+   # V1- ENTERPRISE
+    @staticmethod
+    def requestOnePassToken():
+        return ConstantsEndpoints._REQUEST_ONE_PASS_TOKEN
 
+    @staticmethod
+    def request3DSToken():
+        return ConstantsEndpoints._REQUEST_3DS_TOKEN
+
+    @staticmethod
+    def requestMigsToken():
+        return ConstantsEndpoints._REQUEST_MIGS_TOKEN
+
+    @staticmethod
+    def requestRegistrationV1():
+        return ConstantsEndpoints._REGISTRATION_V1
+
+    @staticmethod
+    def requestRegistrationV1Ewallet():
+        return ConstantsEndpoints._REGISTRATION_V1_EWALLET
+
+    @staticmethod
+    def inquiryV1():
+        return ConstantsEndpoints._INQUIRY_V1
+
+    @staticmethod
+    def cancelV1():
+        return ConstantsEndpoints._CANCEL_V1
+
+    @staticmethod
+    def registrationRedirectV1():
+        return ConstantsEndpoints._REGISTRATION_REDIRECT_V1
+
+    @staticmethod
+    def inquiryRedirectV1():
+        return ConstantsEndpoints._REDIRECT_INQUIRY_V1

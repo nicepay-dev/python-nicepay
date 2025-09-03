@@ -7,14 +7,14 @@ from python_nicepay.service.v2EnterpriseService import ServiceNicepay
 class testInquiry:
     bodyInquiry = (
         builderInquiry.BuildInquiry()
-        .setTxid("IONPAYTEST05202504251543070463")
-        .setReferenceNo("OrdNo20250425154306")
-        .setAmt("1")
+        .setTxid("IONPAYTEST02202506291516021503")
+        .setReferenceNo("RefactorOmen4427")
+        .setAmt("15000")
         .build()
     )
 
     environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(True)
+                   .isCloud(False)
                    .isProduction(False)
                    .build())
 

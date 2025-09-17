@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.model.ccOnePassToken import CCOnePassToken
 from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 from python_nicepay.util.utilMerchantToken import MerchantToken
@@ -14,7 +14,7 @@ class testCCOnePassToken:
 
     request = CCOnePassToken(
         iMid=ConstantsGeneral.getImid(),
-        referenceNo="BUBARKANDPR",
+        referenceNo="_YOUR_REFERENCE_NO_",
         amt=amt,
         cardNo="5123450000000008",
         cardExpYymm="3901",
@@ -22,7 +22,7 @@ class testCCOnePassToken:
 
     request.merchantToken = MerchantToken.getMerchantToken(f"{request.iMid}{request.referenceNo}{amt}{merchantKey}")
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

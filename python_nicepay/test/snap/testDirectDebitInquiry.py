@@ -4,7 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderAccessToken, builderDirectDebit
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -26,10 +26,10 @@ class testDirectDebitInquiry:
 
     bodyDirectDebitInquiry = (
         builderDirectDebit.BuildDirectDebitInquiry()
-        .setMerchantId("TNICEEW051")
+        .setMerchantId("_YOUR_CLIENT_KEY")
         .setSubMerchantId("")
         .setOriginalPartnerReferenceNo("OrdNo20250807095315")
-        .setOriginalReferenceNo("TNICEEW05105202508070953150774")
+        .setOriginalReferenceNo("_YOUR_TRANSACTION_ID")
         .setServiceCode("54")
         .setTransactionDate(timestamp)
         .setAmount(amount)
@@ -37,7 +37,7 @@ class testDirectDebitInquiry:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

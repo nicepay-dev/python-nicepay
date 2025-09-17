@@ -4,7 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderAccessToken, builderQris
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -34,7 +34,7 @@ class testQris:
         "billingCountry": "Indonesia",
         "billingPostCd": "10200",
         "callBackUrl": "https://www.nicepay.co.id/IONPAY_CLIENT/paymentResult.jsp",
-        "dbProcessUrl": "https://webhook.site/5cac2a81-5862-4734-95f4-e20887eef24b",
+        "dbProcessUrl": "_YOUR_DB_PROCESS_URL",
         "userIP": "127.0.0.1",
         "msfee": "",
         "msfeetype": "",
@@ -47,7 +47,7 @@ class testQris:
 
     bodyQris = (
         builderQris.BuildQris()
-        .setMerchantId("DPRSOLOTES")
+        .setMerchantId("_YOUR_CLIENT_KEY")
         .setPartnerReferenceNo("OrdNo" + timestamp)
         .setStoreId("NICEPAY")
         .setValidityPeriod("")
@@ -56,7 +56,7 @@ class testQris:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

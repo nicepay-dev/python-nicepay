@@ -4,7 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderPayout, builderAccessToken
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -26,7 +26,7 @@ class testPayout:
     bodyPayout = (
         builderPayout.BuildPayout()
         .setPartnerReferenceNo("OrdNo" + timestamp)
-        .setMerchantId("NORMALTEST")
+        .setMerchantId("_YOUR_CLIENT_KEY")
         .setMsId("")
         .setBeneficiaryAccountNo("5930696651")
         .setBeneficiaryName("John Doe")
@@ -39,9 +39,9 @@ class testPayout:
         .setBeneficiaryDOE("220101")
         .setBeneficiaryCoNo("12345JP")
         .setBeneficiaryAddress("Jln. Raya Kasablanka Kav.88")
-        .setBeneficiaryAuthPhoneNumber("081623516151725378")
+        .setBeneficiaryAuthPhoneNumber("081623516151725XXX")
         .setBeneficiaryMerCategory("01")
-        .setBeneficiaryCoMgmtName("Hantu Kesorean")
+        .setBeneficiaryCoMgmtName("John Doe")
         .setBeneficiaryCoShName("")
         .setPayoutMethod("1")
         .setReservedDt("")
@@ -52,7 +52,7 @@ class testPayout:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

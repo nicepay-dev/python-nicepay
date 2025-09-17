@@ -37,7 +37,7 @@ class BuilderEnvironment:
         self.setCloud = isCloud
         return self
 
-class BuildEnvirontment(BuilderEnvironment):
+class BuildEnvironment(BuilderEnvironment):
     def build(self):
         return (Environment
                 (self.setProduction, self.setCloud

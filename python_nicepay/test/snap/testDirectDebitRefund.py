@@ -4,7 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderAccessToken, builderDirectDebit
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -30,10 +30,10 @@ class testDirectDebitRefund:
     bodyDirectDebitRefund = (
         builderDirectDebit.BuildDirectDebitRefund()
         .setPartnerRefundNo("RefundNo" + timestamp)
-        .setMerchantId("TNICEEW051")
+        .setMerchantId("_YOUR_CLIENT_KEY")
         .setSubMerchantId("")
         .setOriginalPartnerReferenceNo("OrdNo20250812171542")
-        .setOriginalReferenceNo("TNICEEW05105202508121715524770")
+        .setOriginalReferenceNo("_YOUR_CLIENT_KEY")
         .setExternalStoreId("NICEPAY")
         .setReason("Testing Refund OVOE SNAP")
         .setRefundAmount(refundAmount)
@@ -41,7 +41,7 @@ class testDirectDebitRefund:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.model.ccMigsRequest import CCMigsRequest
 from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 
@@ -20,7 +20,7 @@ class testCCOnePassDo:
         cardCvv=""
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

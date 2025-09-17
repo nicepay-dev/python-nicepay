@@ -1,5 +1,5 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
 from python_nicepay.data.builder.v2.enterprise import builderCartData
 from python_nicepay.data.builder.v1.enterprise import builderCreditCard
@@ -37,7 +37,7 @@ class testCreditCard:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

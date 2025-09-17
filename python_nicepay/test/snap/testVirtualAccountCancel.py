@@ -2,7 +2,7 @@ from python_nicepay.data.builder.snap import builderAccessToken, builderVirtualA
 from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 log = Log()
 
@@ -19,7 +19,7 @@ class testVirtualAccountCancel:
                    }
 
     additionalInfo = {
-            "tXidVA": "NORMALTEST02202508121732255632",
+            "tXidVA": "_YOUR_TRANSACTION_ID",
             "totalAmount": totalAmount,
             "cancelMessage": "Cancel Virtual Account"
                       }
@@ -34,7 +34,7 @@ class testVirtualAccountCancel:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

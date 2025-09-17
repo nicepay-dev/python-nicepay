@@ -2,7 +2,7 @@ from python_nicepay.data.builder.snap import builderAccessToken, builderVirtualA
 from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 
 log = Log()
@@ -23,7 +23,7 @@ class testVirtualAccount:
 
     additionalInfo = {"bankCd": "BMRI",
                       "goodsNm": "Merchant Goods 1",
-                      "dbProcessUrl": "https://webhook.site/888ad12a-ffa9-42b1-af7f-48dfed60c6d1",
+                      "dbProcessUrl": "_YOUR_DB_PROCESS_URL_YOUR_DB_PROCESS_URL",
                       "vacctValidDt": "",
                       "vacctValidTm": "",
                       "msId": "",
@@ -35,7 +35,7 @@ class testVirtualAccount:
 
     bodyCreateVA = (
         builderVirtualAccount.BuildCreateVA()
-        .setPartnerServiceId("")
+        .setPartnerServiceId("_YOUR_PREFIX_NO")
         .setCustomerNo("")
         .setVirtualAccountNo("")
         .setVirtualAccountName("TESTING DEV")
@@ -45,7 +45,7 @@ class testVirtualAccount:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

@@ -1,4 +1,4 @@
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v2.professional import builderRequest, builderCartData, builderSellers
 from python_nicepay.data.builder.v2.professional.dataGenerator import DataGenerator
 from python_nicepay.service.v1ProfessionalService import ServiceNicepayV1
@@ -24,7 +24,7 @@ class testRedirect:
         "sellerCity": "Central Jakarta",
         "sellerPostCd": "10202",
         "sellerCountry": "Indonesia",
-        "sellerPhone": "081363681274"
+        "sellerPhone": "08136368XXXX"
     }
 
     bodyCartData = (
@@ -63,7 +63,7 @@ class testRedirect:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

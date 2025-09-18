@@ -1,4 +1,4 @@
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v2.professional import builderRequest, builderCartData, builderSellers
 from python_nicepay.data.builder.v2.professional.dataGenerator import DataGenerator
 from python_nicepay.service.v2ProfessionalService import ServiceNicepay
@@ -63,7 +63,7 @@ class testRequest:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

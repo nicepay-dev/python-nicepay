@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v2.enterprise import builderPayment
 from python_nicepay.data.builder.v2.enterprise.dataGenerator import DataGenerator
 from python_nicepay.service.v2EnterpriseService import ServiceNicepay
@@ -10,7 +10,7 @@ class testPayment:
     bodyPayment = (
         builderPayment.BuildPayment()
         .setTimestamp(datetime.now().strftime("%Y%m%d%H%M%S"))
-        .setTxid("FLASHMBL0601202508211121053511")
+        .setTxid("_YOUR_TRANSACTION_ID")
         .setReferenceNo("OrdNo20250821112103")
         .setCashtag("")
         .setCardNo("5123450000000008")
@@ -22,7 +22,7 @@ class testPayment:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

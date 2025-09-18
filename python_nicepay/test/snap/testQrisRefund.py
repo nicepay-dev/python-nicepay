@@ -4,7 +4,7 @@ from python_nicepay.constants.constantsEndpoint import ConstantsEndpoints
 from python_nicepay.data.builder.snap import builderAccessToken, builderQris
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.util.utilLogging import Log
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 log = Log()
 timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -27,9 +27,9 @@ class testQrisRefund:
 
     bodyQrisInquiry = (
         builderQris.BuildQrisRefund()
-        .setMerchantId("DPRSOLOTES")
+        .setMerchantId("_YOUR_CLIENT_KEY")
         .setExternalStoreId("NICEPAY")
-        .setOriginalReferenceNo("DPRSOLOTES08202505271200355567")
+        .setOriginalReferenceNo("_YOUR_TRANSACTION_ID")
         .setOriginalPartnerReferenceNo("OrdNo20250527120034")
         .setPartnerRefundNo("51")
         .setRefundAmount(refundAmount)
@@ -38,7 +38,7 @@ class testQrisRefund:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

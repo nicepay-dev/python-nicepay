@@ -1,7 +1,7 @@
 from python_nicepay.data.builder.snap import builderAccessToken
 from python_nicepay.service.snapService import SnapService
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 
 class testAccessToken:
     # Case if merchant using different config with the constant
@@ -18,7 +18,7 @@ class testAccessToken:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

@@ -1,5 +1,5 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
 from python_nicepay.data.builder.v1.enterprise import builderCancel
 from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
@@ -10,7 +10,7 @@ class testCancel:
     bodyCancel = (
         builderCancel.BuildCancelV1()
         .setPayMethod(ConstantsGeneral.getPayMethodVirtualAccount())
-        .setTxid("IONPAYTEST02202508142208001551")
+        .setTxid("_YOUR_TRANSACTION_ID")
         .setReferenceNo("Nice20250814220800")
         .setCancelUserId("Admin")
         .setCancelType("1")
@@ -19,7 +19,7 @@ class testCancel:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

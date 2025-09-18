@@ -49,7 +49,7 @@ class ConstantsEndpoints:
     _REQUEST_ONE_PASS_TOKEN = "/api/onePassToken.do"
     _REQUEST_3DS_TOKEN = "/api/secureVeRequest.do" #PAYMENT = 1 3DS
     _REQUEST_MIGS_TOKEN = "/api/migsRequest.do" #PAYMENT = 3 MIGS
-    _REGISTRATION_V1 = "/api/onePass.do" #kecuali cc untuk payment
+    _REGISTRATION_V1 = "/api/onePass.do"
     _REGISTRATION_V1_EWALLET = "/api/ewalletTrans.do"
     _INQUIRY_V1 = "/api/onePassStatus.do"
     _CANCEL_V1 = "/api/onePassAllCancel.do"

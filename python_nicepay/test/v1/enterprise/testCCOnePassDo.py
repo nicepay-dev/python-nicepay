@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
 from python_nicepay.data.builder.v2.enterprise import builderCartData
 from python_nicepay.data.model.ccOnePassDo import CCOnePassDo
@@ -35,7 +35,7 @@ class testCCOnePassDo:
 
     bodyCCOnePassDo = CCOnePassDo(
         amt=amt,
-        referenceNo="BUBARKANDPR",
+        referenceNo="_YOUR_REFERENCE_NO_",
         instmntType="1",
         instmntMon="1",
         onePassToken="29f7b5f0d76728dfc8e40d48693ecf64f5c3eb97393a637c5031fa4c05a091f3",
@@ -43,12 +43,7 @@ class testCCOnePassDo:
         recurrOpt="1",
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
-                   .isCloud(False)
-                   .isProduction(False)
-                   .build())
-
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

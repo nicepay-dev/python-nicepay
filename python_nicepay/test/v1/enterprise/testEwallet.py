@@ -1,19 +1,11 @@
 from python_nicepay.constants.constantsGeneral import ConstantsGeneral
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
 from python_nicepay.data.builder.v2.enterprise import builderCartData
 from python_nicepay.data.builder.v1.enterprise import builderEwallet
 from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 
 class testEwallet:
-    # Set the internal merchant configuration
-    # imid = "FLASHMOB13"
-    # merchantKey = "33F49GnCMS1mFYlGXisbUDzVf2ATWCl9k3R++d5hDd3Frmuos/XLx8XhXpe+LDYAbpGKZYSwtlyyLOtS/8aD7A=="
-    # callbackUrl = "https://dev.nicepay.co.id/IONPAY_CLIENT/paymentResult.jsp"
-    # dbProcessUrl = "https://webhook.site/e15ef201-98a9-428c-85d4-a0c6458939c3"
-    # billingPhone = "0812345"
-    # ConstantsGeneral.setNonSnapConfiguration(imid, merchantKey, dbProcessUrl, callbackUrl)
-    # ConstantsGeneral.setBillingPhone(billingPhone)
 
     amt = 1000
     itemCartData = {
@@ -40,7 +32,7 @@ class testEwallet:
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

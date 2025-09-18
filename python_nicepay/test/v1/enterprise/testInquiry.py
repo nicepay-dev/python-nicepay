@@ -1,4 +1,4 @@
-from python_nicepay.data.builder import builderEnvirontment
+from python_nicepay.data.builder import builderEnvironment
 from python_nicepay.data.builder.v1.enterprise.dataGenerator import DataGeneratorV1
 from python_nicepay.data.builder.v1.enterprise import builderInquiry
 from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
@@ -7,13 +7,13 @@ from python_nicepay.service.v1EnterpriseService import ServiceNicepayV1
 class testInquiry:
     bodyInquiry = (
         builderInquiry.BuildInquiryV1()
-        .setTxid("IONPAYTEST02202508141632214040")
+        .setTxid("_YOUR_TRANSACTION_ID")
         .setReferenceNo("Nice20250814163220")
         .setAmt("10000")
         .build()
     )
 
-    environment = (builderEnvirontment.BuildEnvirontment()
+    environment = (builderEnvironment.BuildEnvironment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

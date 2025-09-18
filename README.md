@@ -71,7 +71,7 @@ _MERCHANT_KEY = "_YOUR_MERCHANT_KEY"
 
 ```bash
 # Instantiate change if production environment
-environment = (builderEnvirontment.BuildEnvirontment()
+environment = (builderEnvironment.BuildEnvirontment()
                    .isCloud(False)
                    .isProduction(True)
                    .build())
@@ -87,7 +87,7 @@ class testAccessToken:
         .setAdditionalInfo("")
         .build()
     )
-environment = (builderEnvirontment.BuildEnvirontment()
+environment = (builderEnvironment.BuildEnvirontment()
                    .isCloud(False)
                    .isProduction(False)
                    .build())

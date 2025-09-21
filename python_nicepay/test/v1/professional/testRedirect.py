@@ -1,6 +1,6 @@
 from python_nicepay.data.builder import builderEnvironment
-from python_nicepay.data.builder.v2.professional import builderRequest, builderCartData, builderSellers
-from python_nicepay.data.builder.v2.professional.dataGenerator import DataGenerator
+from python_nicepay.data.builder.v1.professional import builderRequest, builderCartData, builderSellers
+from python_nicepay.data.builder.v1.professional.dataGenerator import DataGenerator
 from python_nicepay.service.v1ProfessionalService import ServiceNicepayV1
 
 
@@ -45,7 +45,7 @@ class testRedirect:
     )
 
     bodyRequest = (
-        builderRequest.BuildRequest()
+        builderRequest.BuildRequestV1()
         .setPayMethod("00")
         .setInstmntType("1")
         .setInstmntMon("1")
@@ -68,6 +68,6 @@ class testRedirect:
                    .isProduction(False)
                    .build())
 
-    response = ServiceNicepayV1.serviceRedirectV1(DataGenerator.getTransactionBody(bodyRequest.jsonRequest(),
+    response = ServiceNicepayV1.serviceRedirectV1(DataGenerator.getTransactionBody(bodyRequest.jsonRequestV1(),
                                                                                bodyCartData.jsonCartData(),
                                                                                bodySellers.jsonSellers()),environment)

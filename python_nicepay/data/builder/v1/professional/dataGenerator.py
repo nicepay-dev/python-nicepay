@@ -27,7 +27,7 @@ class DataGenerator:
 
         iMid = ConstantsGeneral.getImid()
         merchantKey = ConstantsGeneral.getMerchantKey()
-        merchantToken = MerchantToken.getMerchantToken(f"{timestamp}{iMid}{referenceNo}{amt}{merchantKey}")
+        merchantToken = MerchantToken.getMerchantToken(f"{iMid}{referenceNo}{amt}{merchantKey}")
         currency = ConstantsGeneral.getCurrency()
         shopId = ConstantsGeneral.getShopId()
         userIp = ConstantsGeneral.getUserIp()

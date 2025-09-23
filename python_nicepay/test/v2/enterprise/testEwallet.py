@@ -33,7 +33,7 @@ class testEwallet:
     bodyEwallet = (
         builderEwallet.BuildEwallet()
         .setPayMethod(ConstantsGeneral.getPayMethodEWallet())
-        .setMitraCd("LINK")
+        .setMitraCd("OVOE")
         .setUserIp(ConstantsGeneral.getUserIp())
         .setAmt(amt)
         .build()

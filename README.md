@@ -1,22 +1,26 @@
-## PYTHON - NICEPAY
+## NICEPAY - PYTHON
 ![Python](https://img.shields.io/badge/Python-v3.11.9-blue.svg)
  [![PyPI Package](https://img.shields.io/pypi/v/python-nicepay.svg?label=PyPI%20Package&color=green)](https://pypi.org/project/python-nicepay/)
 
-NICEPAY ❤️ Python! 🐍
+The **Nicepay Python** provides integration access to the **Nicepay APIs**.  
+This is designed to make it easier for developers to call Nicepay’s REST APIs in Python applications.
 
-This is the Official Python API client / library for NICEPAY Payment API. Visit [Nicepay](https://nicepay.co.id/id/).
-More information about the product and see documentation at [NICEPAY Docs](https://docs.nicepay.co.id/) for more technical details.
-
+### **Information** 
 This library provides access to Nicepay APIs :
 - `SNAP`
-- `V1 Enterprise & Professional`
-- `V2 Enterprise & Professional`
+- `V1 Enterprise (Direct)`
+- `V1 Professional (Redirect)`
+- `V2 Enterprise (Direct)`
+- `V2 Professional (Redirect)`
 
-## 1. Installation
-### a. Using PyPi
+For more information about the product, please refer to the  [NICEPAY Docs](https://docs.nicepay.co.id/)  for detailed technical guidance
+
+## 1. Install the Package
+### a. PyPI
 ```bash
 pip install python-nicepay
 ```
+You can also view the package at: https://pypi.org/project/python-nicepay/1.1.1/
 ### b.  Manually Installation
 You can clone or [download](https://github.com/nicepay-dev/python-nicepay) our source code, then import `PYTHON-NICEPAY` manually into your project.
 #####
@@ -146,7 +150,7 @@ body request :
 {"partnerServiceId": "", "customerNo": "", "virtualAccountNo": "", "virtualAccountName": "John Doe", "trxId": "123", "totalAmount": {"value": "10000.00", "currency": "IDR"}, "additionalInfo": {"bankCd": "BRIN", "goodsNm": "Merchant Goods 1", "dbProcessUrl": "https://webhook.site/e15ef201-98a9-428c-85d4-a0c6458939c3", "vacctValidDt": "", "vacctValidTm": "", "msId": "", "msFee": "", "msFeeType": "", "mbFee": "", "mbFeeType": ""}}
 
 body response :
-{"responseCode": "2002700", "responseMessage": "Successful", "virtualAccountData": {"partnerServiceId": "", "customerNo": "", "virtualAccountNo": "884800040254370152", "virtualAccountName": "John Doe", "trxId": "123", "totalAmount": {"value": "10000.00", "currency": "IDR"}, "additionalInfo": {"msId": "", "msFee": "", "msFeeType": "", "mbFee": "", "mbFeeType": "", "bankCd": "BRIN", "tXidVA": "IONPAYTEST022024111302543xxxxx", "goodsNm": "Merchant Goods 1", "vacctValidDt": "20241115", "vacctValidTm": "025437"}}}
+{"responseCode": "2002700", "responseMessage": "Successful", "virtualAccountData": {"partnerServiceId": "88480004", "customerNo": "0254370152", "virtualAccountNo": "884800040254370152", "virtualAccountName": "John Doe", "trxId": "123", "totalAmount": {"value": "10000.00", "currency": "IDR"}, "additionalInfo": {"msId": "", "msFee": "", "msFeeType": "", "mbFee": "", "mbFeeType": "", "bankCd": "BRIN", "tXidVA": "IONPAYTEST022024111302543xxxxx", "goodsNm": "Merchant Goods 1", "vacctValidDt": "20241115", "vacctValidTm": "025437"}}}
 ```
 #### 2.4 Verify Signature 
 - for Access Token
@@ -176,7 +180,7 @@ class Signature:
         return hexEncoded
 ```
 **Notes :**
-`stringToSign` = `"_YOUR_CLINET_KEY" + "|" + "_TIMESTAMP";`
+`stringToSign` = `"_YOUR_CLIENT_KEY" + "|" + "_TIMESTAMP";`
 
 - for Signature Service
 ```bash
@@ -207,21 +211,34 @@ Signature: w7BpJ392jzRkAgvWC79Zawvztm/l1D+bxIJWgGq59xih0SuAi4PoTtUAUIXcOLuvZ3pYa
 ```
 
 You can view a code example in the following **[UtilSignature.py](https://github.com/nicepay-dev/python-nicepay/blob/main/util/utilSignature.py)** class.
-## 3. Other Sample
+
+## 3. Environments
+Configured to use a different environment for making API calls. 
+#### Available environments are:
+
+| Name          | Description                            |
+|:--------------|:---------------------------------------|
+| `Production`  | Nicepay Live Environment               |
+| `Development` | **Default** Nicepay Sandbox Environment|
+
+
+
+## 4. Other Sample
 
 ##### Integration test are available for SNAP :
 - [Virtual Account Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testVirtualAccount.py)
 - [E-Wallet Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testDirectDebit.py)
 - [Qris Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testQris.py)
 - [Payout Regist Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/snap/testPayout.py)
-- 
+
 ##### Integration test are available for V2 APIs :
 - [Virtual Account V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testVirtualAccount.py)
 - [Inquiry V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testInquiry.py)
 - [Payment V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testPayment.py)
 - [Cancel V2 Unit Test](https://github.com/nicepay-dev/python-nicepay/blob/main/test/v2/enterprise/testCancel.py)
 
-## 4. Get Help
+## 5. Get Help
+- [Nicepay](https://nicepay.co.id/id/)
 - [Nicepay Docs](https://docs.nicepay.co.id/)
 - [Nicepay Dashboard](http://103.20.51.40:8012/logIn.do)
 - [SNAP documentation](https://docs.nicepay.co.id/nicepay-api-snap)

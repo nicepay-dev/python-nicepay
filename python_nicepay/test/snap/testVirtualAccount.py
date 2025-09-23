@@ -23,7 +23,7 @@ class testVirtualAccount:
 
     additionalInfo = {"bankCd": "BMRI",
                       "goodsNm": "Merchant Goods 1",
-                      "dbProcessUrl": "_YOUR_DB_PROCESS_URL_YOUR_DB_PROCESS_URL",
+                      "dbProcessUrl": "_YOUR_DB_PROCESS_URL",
                       "vacctValidDt": "",
                       "vacctValidTm": "",
                       "msId": "",

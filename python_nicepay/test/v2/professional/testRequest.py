@@ -24,7 +24,7 @@ class testRequest:
         "sellerCity": "Central Jakarta",
         "sellerPostCd": "10202",
         "sellerCountry": "Indonesia",
-        "sellerPhone": "081363681274"
+        "sellerPhone": "0813XXXXX"
     }
 
     bodyCartData = (
@@ -50,7 +50,7 @@ class testRequest:
         .setInstmntType("1")
         .setInstmntMon("1")
         .setRecurrOpt("1")
-        .setBankCd("CENA")
+        .setBankCd("BRIN")
         .setMitraCd("")
         .setVacctValidDt("")
         .setVacctValidTm("")
